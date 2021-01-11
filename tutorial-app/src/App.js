@@ -6,10 +6,14 @@ import Message from './components/Message.js'
 import Counter from './components/Counter.js'
 import FuncClick from './components/FuncClick.js'
 import ClassClic from './components/classClick.js'
-import EvenBind from "./components/EventBind.js";
+import EvenBind from "./components/EventBind.js"
 import ParentComp from './components/ParentComp'
-import UserGreet from './components/UserGreet';
-import NameList from './components/NameList';
+import UserGreet from './components/UserGreet'
+import NameList from './components/NameList'
+import Stylesheet from './components/Stylesheet'
+import Inline from './components/Inline'
+import './appStyles.css'
+import styles from './appStyles.module.css'
 
 function App() {
   return (
@@ -39,6 +43,15 @@ function App() {
       <UserGreet />
 
       <NameList />
+
+      <Stylesheet primary = {true}/>
+
+      <Inline />
+      
+      <h1 className = 'error'> ERROR</h1>
+
+      <h1 className = {styles.success}>Success</h1>
+
 
     </div>
   );
