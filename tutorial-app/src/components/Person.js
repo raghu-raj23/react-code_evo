@@ -3,7 +3,7 @@ import React from 'react'
 function Person({person}) {
     return (
         <div>
-            <h2>{person}</h2>
+            <h2 key = {person}>{person}</h2>
         </div>
     )
 }
