@@ -1,6 +1,44 @@
 import React, { Component } from 'react'
 import LifeCycleB from './LifeCycleB'
 
+// mounting lifecycle methods
+
+// class LifeCycleA extends Component {
+//     constructor(props) {
+//         super(props)
+    
+//         this.state = {
+//              name: 'Raghu'
+//         }
+//         console.log('Lifecycle A constructor')
+//     }
+
+//     static getDerivedStateFromProps(props, state){
+//         console.log('LifecycleA get derived state from props')
+//         return null
+//     }
+//     // this method is rarely used and is used only when the state of the component changes in props over time. Its called every time a component re-renders
+ 
+//     componentDidMount(){
+//         console.log("LifecycleA component did mount")
+//     }
+//     //this is invoked at the last after the component has mounted
+    
+//     render() {
+//         console.log("LifecycleA render")
+//         return (
+//             <div>
+//                 LifeCycle a
+//                 <LifeCycleB/>
+//             </div>
+//         )
+//     }
+// }
+
+// export default LifeCycleA
+
+// Update LifeCycle Methods
+
 class LifeCycleA extends Component {
     constructor(props) {
         super(props)
@@ -15,18 +53,40 @@ class LifeCycleA extends Component {
         console.log('LifecycleA get derived state from props')
         return null
     }
-    // this method is rarely used and is used only when the state of the component changes in props over time.
+    // this method is rarely used and is used only when the state of the component changes in props over time. 
+    // Its called every time a component re-renders
  
-    componentDidMount(){
-        console.log("LifecycleA component did mount")
+    shouldComponentUpdate(){
+        console.log("Lifecycle A shouldComponent Update")
+        return true
     }
-    //this is invoked at the last after the component has mounted
+    // this method takes in updated props and states and checks if the component should re-render or not. By default its true, but can be used to change this behaviour
+
+    getSnapshotBeforeUpdate(prevProps, prevState){
+        console.log('Lifecycle A get Snapshot')
+        return null
+    }
+    // Accepts prev state and props, its called  before changes from virtual DOM has to be reflected in the DOM
+
+    componentDidUpdate(){
+        console.log("Lifecycle A componentDidupdate")
+    }
+    // Called after render is finished in the re-render cycles.
+    // Accepts prev props, state and snapshot from getSnapshotBeforeUpdate
+    //Called only once in each re-render cycle. Can make AJAX calls here
+
+    changeState = () => {
+        this.setState ({
+            name:'Raj'
+        })
+    }
     
     render() {
         console.log("LifecycleA render")
         return (
             <div>
-                LifeCycle a
+                <div> LifeCycle a </div>
+                <button onClick = {this.changeState}>Change State</button>
                 <LifeCycleB/>
             </div>
         )
@@ -34,3 +94,15 @@ class LifeCycleA extends Component {
 }
 
 export default LifeCycleA
+
+// Unmounting Phase methods:
+
+// 1. componentWillUnmount()
+// Invoked right before a component is unmounted and destroyed.
+// Can perform clean-up tasks like cancelling network requests, removing event handlers, cancelling subscriptions and invalidating timers
+
+// Error Handling Phase methods:
+// 1. static getDerivedStateFromError(error)
+// 2.componentDidCatch(error,info)
+
+// Both are called either during CanvasRenderingContext2D, in a LifeCycle method or in the constructor of any child component
