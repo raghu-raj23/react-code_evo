@@ -2,7 +2,7 @@ import React from 'react'
 
 function FuncClick() {
     function clickHandler(){
-        console.log("yahoo")
+        alert("yahoo")
     }
     return (
         <div>

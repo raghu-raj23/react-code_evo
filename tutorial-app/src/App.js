@@ -15,11 +15,12 @@ import Inline from './components/Inline'
 import './appStyles.css'
 import styles from './appStyles.module.css'
 import Form from './components/Form';
+import LifeCycleA from './components/LifeCycleA';
 
 function App() {
   return (
     <div className="App">
-      <Greet name = "naruto" >
+      {/* <Greet name = "naruto" >
         <p>children props</p>
       </Greet>
 
@@ -33,7 +34,7 @@ function App() {
 
       <Counter />
 
-      <FuncClick />
+      <FuncClick /> 
 
       <ClassClic />
 
@@ -43,17 +44,19 @@ function App() {
 
       <UserGreet />
       
-      <NameList />
+      <NameList /> */}
       {/* 20. Styling with CSS */}
-      <Stylesheet primary = {true}/>
+      {/* <Stylesheet primary = {true}/>
 
       <Inline />
       
       <h1 className = 'error'> ERROR</h1>
 
-      <h1 className = {styles.success}>Success</h1>
+      <h1 className = {styles.success}>Success</h1> */}
       {/* 21. Form handling */}
-      <Form />
+      {/* <Form /> */}
+
+      <LifeCycleA />
 
     </div>
   );

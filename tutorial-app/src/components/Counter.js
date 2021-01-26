@@ -16,7 +16,7 @@ class Counter extends Component {
         // },() => {console.log("-->", this.state.count)})
         //this will result in async call of setState
         
-        //but here it will bee bases on previous state
+        //but here it will bee based on previous state
         this.setState((prevState) => ({
             count: prevState.count + 1
         }))
