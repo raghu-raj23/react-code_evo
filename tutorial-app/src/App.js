@@ -19,6 +19,7 @@ import FragmentDemo from "./components/FragmentDemo";
 import Table from "./components/Table";
 import PureComp from "./components/PureComp";
 import ParentComp_p from "./components/ParentComp_p";
+import RefsDemo from "./components/RefsDemo";
 
 function App() {
   return (
@@ -75,7 +76,7 @@ function App() {
       <ParentComp_p />
 
       <h3>This corresponds to React Refs</h3>
-
+      <RefsDemo />
 
 
     </div>
