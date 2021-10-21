@@ -4,7 +4,7 @@ import Welcome from "./components/Welcome.js";
 import Message from "./components/Message.js";
 import Counter from "./components/Counter.js";
 import FuncClick from "./components/FuncClick.js";
-import ClassClic from "./components/classClick.js";
+import ClassClic from "./components/ClassClick.js";
 import EvenBind from "./components/EventBind.js";
 import ParentComp from "./components/ParentComp";
 import UserGreet from "./components/UserGreet";
@@ -20,6 +20,12 @@ import Table from "./components/Table";
 import PureComp from "./components/PureComp";
 import ParentComp_p from "./components/ParentComp_p";
 import RefsDemo from "./components/RefsDemo";
+import ClassRefs from "./components/ClassRefs";
+import ClassRefsParent from "./components/ClassRefsParent";
+import FRParentInput from "./components/FRParentInput";
+import PortalDemo from "./components/PortalDemo";
+import Hero from "./components/Hero";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 function App() {
   return (
@@ -78,6 +84,25 @@ function App() {
       <h3>This corresponds to React Refs</h3>
       <RefsDemo />
 
+      <h3>This corresponds to React class Refs</h3>
+      
+      <ClassRefsParent />
+
+      <h3>This corresponds to forwarding React Refs</h3>
+
+      <FRParentInput/>
+      <h3>This corresponds to forwarding React Portals</h3>
+
+      <PortalDemo/>
+
+      <h3>This corresponds to forwarding React Error Boundaries</h3>
+
+      <ErrorBoundary>
+      <Hero heroName ="Batman" />
+      </ErrorBoundary>
+      <ErrorBoundary>
+      <Hero heroName ="Jocker"/>
+      </ErrorBoundary>
 
     </div>
   );

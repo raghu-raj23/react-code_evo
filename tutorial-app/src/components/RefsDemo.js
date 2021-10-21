@@ -12,9 +12,9 @@ class RefsDemo extends Component {
     }
 
     componentDidMount() {
-        // this.inputRef.current.focus();
-        // console.log(this.inputRef);
-        // Approach 2
+        this.inputRef.current.focus();
+        console.log(this.inputRef);
+        // Approach 2 older
         if (this.cbRef){
             this.cbRef.focus();
         }

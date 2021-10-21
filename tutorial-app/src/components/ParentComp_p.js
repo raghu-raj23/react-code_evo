@@ -9,7 +9,7 @@ class ParentComp_p extends Component { // Tis is used fofr Memo components
         super(props)
     
         this.state = {
-             name: 'Raghu'
+            name: 'Raghu'
         }
     }
     componentDidMount(){

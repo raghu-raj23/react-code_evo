@@ -1,61 +1,43 @@
 import React, { Component } from 'react'
 import LifeCycleB from './LifeCycleB'
 
-// mounting lifecycle methods
 
-// class LifeCycleA extends Component {
-//     constructor(props) {
-//         super(props)
-    
-//         this.state = {
-//              name: 'Raghu'
-//         }
-//         console.log('Lifecycle A constructor')
-//     }
 
-//     static getDerivedStateFromProps(props, state){
-//         console.log('LifecycleA get derived state from props')
-//         return null
-//     }
-//     // this method is rarely used and is used only when the state of the component changes in props over time. Its called every time a component re-renders
- 
-//     componentDidMount(){
-//         console.log("LifecycleA component did mount")
-//     }
-//     //this is invoked at the last after the component has mounted
-    
-//     render() {
-//         console.log("LifecycleA render")
-//         return (
-//             <div>
-//                 LifeCycle a
-//                 <LifeCycleB/>
-//             </div>
-//         )
-//     }
-// }
 
-// export default LifeCycleA
-
-// Update LifeCycle Methods
 
 class LifeCycleA extends Component {
     constructor(props) {
         super(props)
-    
+        
         this.state = {
-             name: 'Raghu'
+            name: 'Raghu'
         }
         console.log('Lifecycle A constructor')
     }
+    // mounting lifecycle methods
 
     static getDerivedStateFromProps(props, state){
         console.log('LifecycleA get derived state from props')
         return null
     }
     // this method is rarely used and is used only when the state of the component changes in props over time. 
-    // Its called every time a component re-renders
- 
+    // Its called every time a component re-renders. Return an object representing the new state of the component
+    
+    componentDidMount(){
+        console.log("LifecycleA component did mount")
+    }
+    //this is invoked immediately after the component has mounted
+    // perform ajax request, etc
+    
+    // Update LifeCycle Methods
+
+    /* static getDerivedStateFromProps(props, state){
+        console.log('LifecycleA get derived state from props')
+        return null
+    }
+    // this method is rarely used and is used only when the state of the component changes in props over time. 
+    // Its called every time a component re-renders. Return an object representing the new state of the component */
+
     shouldComponentUpdate(){
         console.log("Lifecycle A shouldComponent Update")
         return true
@@ -66,7 +48,8 @@ class LifeCycleA extends Component {
         console.log('Lifecycle A get Snapshot')
         return null
     }
-    // Accepts prev state and props, its called  before changes from virtual DOM has to be reflected in the DOM
+    // Accepts prev state and props, its called  before changes from virtual DOM has to be reflected in the DOM. Capture information from DOM like user scroll position
+    
 
     componentDidUpdate(){
         console.log("Lifecycle A componentDidupdate")

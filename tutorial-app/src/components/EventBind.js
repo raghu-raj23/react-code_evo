@@ -9,6 +9,7 @@ class EventBind extends Component {
         this.state = {
         message: 'Hello'
         }
+        // official approach
         // this.clickHandler = this.clickHandler.bind(this)
     }
     // clickHandler(){
@@ -28,11 +29,10 @@ class EventBind extends Component {
         return (
             <div>
                 <div>{this.state.message}</div>
-                {/* 1. this will render the whole component, it will have performance issues */}
-                {/* <button onClick = {this.clickHandler.bind(this)}>Clickedkdfkfkf</button> */}
+                {/* 1. this will render the whole component, it will have performance issues
+                   <button onClick = {this.clickHandler.bind(this)}>Clickedkdfkfkf</button> */}
                 
-                {/* 2. this also has performance issues */}
-                {/* <button onClick = {() => this.clickHandler()}>Clickedkdfkfkf</button> */}
+                {/* 2. this also has performance issues <button onClick = {() => this.clickHandler()}>Clickedkdfkfkf</button> */}
 
                 {/* 3. this is the official binding happens only once*/}
                 <button onClick = {this.clickHandler}>Clickedkdfkfkf</button>
