@@ -28,6 +28,9 @@ import Hero from "./components/Hero";
 import ErrorBoundary from "./components/ErrorBoundary";
 import ClickCounter from "./components/ClickCounter";
 import HoverCounter from "./components/HoverCounter";
+import User from "./components/User";
+import ComponentC from "./components/ComponentC";
+import { UserProvider } from "./components/UserContext";
 
 function App() {
   return (
@@ -106,11 +109,16 @@ function App() {
       <Hero heroName ="Jocker"/>
       </ErrorBoundary> */}
 
-      <h3>This corresponds to forwarding React Higher Order Components</h3>
+      <h3>This corresponds to React Higher Order Components</h3>
 
       <ClickCounter/>
       <HoverCounter/>
-
+      <h3>This corresponds to render props</h3>
+      <User render = {(isLoggedIn) => isLoggedIn ? "raghu" : "Guest" }/>
+      <h3>This corresponds to Context API</h3>
+      <UserProvider value = "Raghu">
+        <ComponentC />
+      </UserProvider>
     </div>
   );
 }
