@@ -31,6 +31,8 @@ import HoverCounter from "./components/HoverCounter";
 import User from "./components/User";
 import ComponentC from "./components/ComponentC";
 import { UserProvider } from "./components/UserContext";
+import PostList from "./components/PostList";
+import PostForm from "./components/PostForm";
 
 function App() {
   return (
@@ -119,6 +121,9 @@ function App() {
       <UserProvider value = "Raghu">
         <ComponentC />
       </UserProvider>
+      <h3>This corresponds to HTTP request with class</h3>
+      <PostList />
+      <PostForm />
     </div>
   );
 }
