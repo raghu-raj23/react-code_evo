@@ -6,6 +6,8 @@ import L4_CounterWithArray from './components/L4_CounterWithArray';
 import L5_CounterWithEffect from './components/L5_CounterWithEffect';
 import L6_HookMouse from './components/L6_HookMouse';
 import L7_MouseContainer from './components/L7_MouseContainer';
+import L8_IntervalHookCounter from './components/L8_IntervalHookCounter';
+import L9_DataFetchingAxios from './components/L9_DataFetchingAxios';
 function App() {
   return (
     <div className="App">
@@ -16,6 +18,8 @@ function App() {
       <L5_CounterWithEffect />
       <L6_HookMouse />
       <L7_MouseContainer />
+      <L8_IntervalHookCounter />
+      <L9_DataFetchingAxios />
     </div>
   );
 }
