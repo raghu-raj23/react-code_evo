@@ -15,6 +15,8 @@ import L11_ReducerCounterOne from './components/L11_ReducerCounterOne';
 import L12_ReducerCounterTwo from './components/L12_ReducerCounterTwo';
 import L13_ReducerCounterThree from './components/L13_ReducerCounterThree';
 import L14_RedConCompA from './components/L14_RedConCompA';
+import L15_RedDatFetching from './components/L15_RedDatFetching';
+import L15_RedDatFetching2 from './components/L15_RedDatFetching2';
 
 
 const initialState = 0;
@@ -42,7 +44,7 @@ function App() {
   return (
     <CountContext.Provider value ={{ countState: count, countDispatch: dispatch }}>
       <div className="App">
-        <L1_Counter />
+        {/* <L1_Counter />
         <L2_CounterWithFunc />
         <L3_CounterWithSpread />
         <L4_CounterWithArray />
@@ -63,7 +65,9 @@ function App() {
         <L13_ReducerCounterThree />
 
         Count - {count}
-        <L14_RedConCompA />
+        <L14_RedConCompA /> */}
+        <L15_RedDatFetching />
+        <L15_RedDatFetching2 />
       </div>
     </CountContext.Provider>
   );
