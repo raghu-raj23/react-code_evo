@@ -18,6 +18,7 @@ import L14_RedConCompA from './components/L14_RedConCompA';
 import L15_RedDatFetching from './components/L15_RedDatFetching';
 import L15_RedDatFetching2 from './components/L15_RedDatFetching2';
 import L16_CBParentComp from './components/L16_CBParentComp';
+import L17_MemoCounter from './components/L17_MemoCounter';
 
 
 const initialState = 0;
@@ -70,6 +71,7 @@ function App() {
         <L15_RedDatFetching />
         <L15_RedDatFetching2 />
         <L16_CBParentComp />
+        <L17_MemoCounter />
       </div>
     </CountContext.Provider>
   );
