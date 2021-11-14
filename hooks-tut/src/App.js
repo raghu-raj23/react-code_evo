@@ -19,6 +19,11 @@ import L15_RedDatFetching from './components/L15_RedDatFetching';
 import L15_RedDatFetching2 from './components/L15_RedDatFetching2';
 import L16_CBParentComp from './components/L16_CBParentComp';
 import L17_MemoCounter from './components/L17_MemoCounter';
+import L18_RefFocusInput from './components/L18_RefFocusInput';
+import L19_RefHookTimer from './components/L19_RefHookTimer';
+import L20_CustTitle from './components/L20_CustTitle';
+import L21_CustCounter from './components/L21_CustCounter';
+import L22_CustUserForm from './components/L22_CustUserForm';
 
 
 const initialState = 0;
@@ -72,6 +77,11 @@ function App() {
         <L15_RedDatFetching2 />
         <L16_CBParentComp />
         <L17_MemoCounter />
+        <L18_RefFocusInput />
+      <L19_RefHookTimer />
+      <L20_CustTitle />
+      <L21_CustCounter />
+      <L22_CustUserForm />
       </div>
     </CountContext.Provider>
   );
