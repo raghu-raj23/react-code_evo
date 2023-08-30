@@ -62,29 +62,49 @@
 
 // // If performance and resource allocation is concern use callback based
 
-const fs = require("node:fs")
-const zlib = require("node:zlib")
-// zlib provide compression using gzip algorithm, has built in transform stream
+// const fs = require("node:fs")
+// const zlib = require("node:zlib")
+// // zlib provide compression using gzip algorithm, has built in transform stream
 
-const gzip = zlib.createGzip();
+// const gzip = zlib.createGzip();
 
-const readStream = fs.createReadStream("./file.txt", {
-    encoding: "utf-8",
-    highWaterMark: 10,
-});
-readStream.pipe(gzip).pipe(fs.WriteStream("./file2.txt.gz"))
-
-const writeStream = fs.createWriteStream("./file2.txt");
-
-// readStream.on("data", (chunck) => {
-//     console.log(chunck);
-//     writeStream.write(chunck);
-// })
-
-// pipe returns destination stream
-readStream.pipe(writeStream)
-// For chaining we require the destination stream to be readable, duplex or transform stream but here its writable
-
-
+// const readStream = fs.createReadStream("./file.txt", {
+//     encoding: "utf-8",
+//     highWaterMark: 10,
+// });
+// readStream.pipe(gzip).pipe(fs.WriteStream("./file2.txt.gz"))
 
 // const writeStream = fs.createWriteStream("./file2.txt");
+
+// // readStream.on("data", (chunck) => {
+// //     console.log(chunck);
+// //     writeStream.write(chunck);
+// // })
+
+// // pipe returns destination stream
+// readStream.pipe(writeStream)
+// // For chaining we require the destination stream to be readable, duplex or transform stream but here its writable
+
+
+
+// // const writeStream = fs.createWriteStream("./file2.txt");
+
+
+const http = require("node:http");
+const fs = require("node:fs")
+
+// http module also extends the event emitter module and req and res are the event listeners
+const server = http.createServer((req, res) => {
+  const name = "Goku";
+  res.writeHead(200, {"Content-Type": "text/html"});
+  if (req.url == '/') {
+    let html = fs.readFileSync("./index.html", "utf-8");
+    html = html.replace("{{name}}", name);
+    res.end(html);
+  }
+  res.end("nope");
+});
+
+server.listen(3000, () => {
+    console.log("server is Listening on 3000")
+});
